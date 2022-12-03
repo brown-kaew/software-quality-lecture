@@ -3,6 +3,26 @@ package sum
 import "testing"
 
 func TestSum(t *testing.T) {
+	t.Run("should return 0 when empty argument", func(t *testing.T) {
+		want := 0
+
+		got := sum()
+
+		if want != got {
+			t.Errorf("sum() = %d; want %d", got, want)
+		}
+	})
+
+	t.Run("should return 0 when empty value", func(t *testing.T) {
+		want := 0
+
+		got := sum([]int{}...)
+
+		if want != got {
+			t.Errorf("sum() = %d; want %d", got, want)
+		}
+	})
+
 	t.Run("should return 3 when 1 and 2", func(t *testing.T) {
 		want := 3
 
@@ -41,6 +61,17 @@ func TestSum(t *testing.T) {
 
 		if want != got {
 			t.Errorf("sum(1, 2, 3, 4, 5) = %d; want %d", got, want)
+		}
+	})
+
+	t.Run("should return 10 when  1, 2, 3, 4, -5", func(t *testing.T) {
+		want := 5
+		nums := []int{1, 2, 3, 4, -5}
+
+		got := sum(nums...)
+
+		if want != got {
+			t.Errorf("sum(1, 2, 3, 4, -5) = %d; want %d", got, want)
 		}
 	})
 }
