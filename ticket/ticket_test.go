@@ -23,7 +23,7 @@ func TestPrice(t *testing.T) {
 			want := tt.want
 			var age uint = tt.age
 
-			got := price(age)
+			got := Price(age)
 
 			if want != got {
 				t.Errorf("Want %f but got %f", want, got)
