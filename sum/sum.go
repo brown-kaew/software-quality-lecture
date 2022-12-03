@@ -1,5 +1,11 @@
 package sum
 
-func sum(a, b int) int {
-	return a + b
+func sum(nums ...int) int {
+	sum := 0
+
+	for _, x := range nums {
+		sum += x
+	}
+
+	return sum
 }
