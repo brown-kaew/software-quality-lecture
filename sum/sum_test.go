@@ -3,5 +3,9 @@ package sum
 import "testing"
 
 func TestSum(t *testing.T) {
-	t.Log("testing sum")
+	got := sum(1, 2)
+
+	if got != 3 {
+		t.Errorf("sum(1, 2) = %d; wannt 3", got)
+	}
 }
